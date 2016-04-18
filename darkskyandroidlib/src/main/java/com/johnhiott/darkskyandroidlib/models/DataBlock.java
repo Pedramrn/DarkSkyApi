@@ -6,6 +6,7 @@ summary: A human-readable text summary of this data block.
         data: An array of data point objects (see above), ordered by time, which together describe the weather conditions at the requested l
 */
 
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;

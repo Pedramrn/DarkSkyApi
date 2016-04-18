@@ -1,34 +1,35 @@
-apply plugin: 'com.android.library'
+apply plugin: 'java'
+apply plugin: 'com.novoda.bintray-release'
 
-android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
 
-    defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-    }
+//noinspection GroovyUnusedAssignment
+sourceCompatibility = 1.7
+//noinspection GroovyUnusedAssignment
+targetCompatibility = 1.7
 
-    lintOptions {
-        abortOnError false
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.google.code.gson:gson:2.3'
-    compile 'io.reactivex:rxjava:1.0.11'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+//    compile 'com.squareup.retrofit2:converter-jackson:2.0.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+//    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
+}
+
+publish {
+    userOrg = '6thsolution'
+    groupId = 'com.sixthsolution.weather'
+    uploadName = 'forecastio'
+    repoName = 'public-maven'
+    artifactId = 'forecastio'
+    publishVersion = '1.0.0-beta1'
+    desc = 'Forcastio Java Client'
+    website = 'https://github.com/Pedramrn/DarkSkyApi'
+    repository = 'https://github.com/Pedramrn/DarkSkyApi.git'
 }

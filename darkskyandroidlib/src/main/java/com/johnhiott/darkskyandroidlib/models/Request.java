@@ -1,6 +1,5 @@
 package com.johnhiott.darkskyandroidlib.models;
 
-import android.text.TextUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +9,7 @@ import java.util.Map;
 public class Request {
 
     private static final String UNITS_KEY = "units";
+
     public enum Units {
         SI("si"),
         US("us"),
@@ -17,9 +17,11 @@ public class Request {
         UK("uk"),
         AUTO("auto");
         private String mValue;
+
         Units(String value) {
             mValue = value;
         }
+
         @Override
         public String toString() {
             return mValue;
@@ -27,6 +29,7 @@ public class Request {
     }
 
     private static final String LANGUAGE_KEY = "lang";
+
     public enum Language {
         ARABIC("ar"),
         BOSNIAN("bs"),
@@ -50,9 +53,11 @@ public class Request {
         CHINESE("zh"),
         CHINESE_TRADITIONAL("zh-tw");
         private String mValue;
+
         private Language(String value) {
             mValue = value;
         }
+
         @Override
         public String toString() {
             return mValue;
@@ -70,9 +75,11 @@ public class Request {
         ALERTS("alerts"),
         FLAGS("flags");
         String mValue;
-        private Block (String value) {
+
+        private Block(String value) {
             mValue = value;
         }
+
         @Override
         public String toString() {
             return mValue;
@@ -146,24 +153,48 @@ public class Request {
 
     public Map<String, String> getQueryParams() {
         Map<String, String> query = new HashMap<>();
-        query.put(UNITS_KEY, mUnits.toString());
-        query.put(LANGUAGE_KEY, mLanguage.toString());
-        query.put(EXCLUDE_KEY, getExcludeBlock());
-        query.put(EXTEND_KEY, getExtendBlocks());
+        if (mUnits != null)
+            query.put(UNITS_KEY, mUnits.toString());
+        if (mLanguage != null)
+            query.put(LANGUAGE_KEY, mLanguage.toString());
+        if (getExcludeBlock() != null)
+            query.put(EXCLUDE_KEY, getExcludeBlock());
+        if (getExtendBlocks() != null)
+            query.put(EXTEND_KEY, getExtendBlocks());
         return query;
     }
 
     private String getExcludeBlock() {
-        return mExcludeBlocks.size() > 0 ? TextUtils.join(",", mExcludeBlocks) : null;
+        return mExcludeBlocks.size() > 0 ? join(",", mExcludeBlocks) : null;
     }
 
     private String getExtendBlocks() {
-        return mExtendBlocks.size() > 0 ? TextUtils.join(",", mExtendBlocks) : null;
+        return mExtendBlocks.size() > 0 ? join(",", mExtendBlocks) : null;
     }
 
     @Override
     public String toString() {
         String params = mLat + "," + mLng;
-        return  useTime() ?  params + "," + mTime : params;
+        return useTime() ? params + "," + mTime : params;
+    }
+
+    /**
+     * Returns a string containing the tokens joined by delimiters.
+     *
+     * @param tokens an array objects to be joined. Strings will be formed from the objects by
+     *               calling object.toString().
+     */
+    public static String join(CharSequence delimiter, Iterable tokens) {
+        StringBuilder sb = new StringBuilder();
+        boolean firstTime = true;
+        for (Object token : tokens) {
+            if (firstTime) {
+                firstTime = false;
+            } else {
+                sb.append(delimiter);
+            }
+            sb.append(token);
+        }
+        return sb.toString();
     }
 }

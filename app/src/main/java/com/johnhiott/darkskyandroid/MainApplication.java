@@ -4,11 +4,13 @@ import android.app.Application;
 
 import com.johnhiott.darkskyandroidlib.ForecastApi;
 
+import okhttp3.logging.HttpLoggingInterceptor;
+
 public class MainApplication extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        ForecastApi.create("5f0c0745a2939e44dd79a189c5386962");
+        ForecastApi.create("YOUR-API-KEY", HttpLoggingInterceptor.Level.BODY);
     }
 }

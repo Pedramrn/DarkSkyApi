@@ -3,14 +3,17 @@ package com.johnhiott.darkskyandroid;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.johnhiott.darkskyandroidlib.RequestBuilder;
 import com.johnhiott.darkskyandroidlib.models.Request;
 import com.johnhiott.darkskyandroidlib.models.WeatherResponse;
 
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import javax.net.ssl.HttpsURLConnection;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends Activity {
@@ -27,23 +30,29 @@ public class MainActivity extends Activity {
         Request request = new Request();
         request.setLat("32.00");
         request.setLng("-81.00");
-        request.setUnits(Request.Units.US);
-        request.setLanguage(Request.Language.PIG_LATIN);
-        request.addExcludeBlock(Request.Block.CURRENTLY);
-        request.removeExcludeBlock(Request.Block.CURRENTLY);
+        request.setUnits(Request.Units.SI);
+//        request.setLanguage(Request.Language.PIG_LATIN);
+//        request.addExcludeBlock(Request.Block.CURRENTLY);
+//        request.removeExcludeBlock(Request.Block.CURRENTLY);
 
-        weather.getWeather(request, new Callback<WeatherResponse>() {
+        weather.getWeather(request).enqueue(new Callback<WeatherResponse>() {
             @Override
-            public void success(WeatherResponse weatherResponse, Response response) {
-                Log.d(TAG, "Temp: " + weatherResponse.getCurrently().getTemperature());
-                Log.d(TAG, "Summary: " + weatherResponse.getCurrently().getSummary());
-                Log.d(TAG, "Hourly Sum: " + weatherResponse.getHourly().getSummary());
+            public void onResponse(Call<WeatherResponse> call, Response<WeatherResponse> response) {
+                if (response.code() == HttpsURLConnection.HTTP_OK) {
+                    final WeatherResponse weatherResponse = response.body();
+                    Toast.makeText(MainActivity.this,
+                            "Temp: " + weatherResponse.getCurrently().getTemperature() + "\n"
+                                    + "Summary: " + weatherResponse.getCurrently().getSummary() + "\n"
+                                    + "Hourly Sum: " + weatherResponse.getHourly().getSummary()
+                            , Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MainActivity.this, response.message(), Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
-            public void failure(RetrofitError retrofitError) {
-                Log.d(TAG, "Error while calling: " + retrofitError.getUrl());
-                Log.d(TAG, retrofitError.toString());
+            public void onFailure(Call<WeatherResponse> call, Throwable t) {
+                Log.e(TAG, "Failed: ", t);
             }
         });
     }

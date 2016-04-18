@@ -5,18 +5,17 @@ import com.johnhiott.darkskyandroidlib.models.WeatherResponse;
 
 import java.util.Map;
 
-import retrofit.Callback;
-import retrofit.http.GET;
-import retrofit.http.Path;
-import retrofit.http.QueryMap;
-import rx.Observable;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
+import retrofit2.http.QueryMap;
 
 public interface Weather {
 
-    @GET("/{request}")
-    void getWeather(@Path("request") Request params, @QueryMap Map<String,String> query, Callback<WeatherResponse> cb);
+    @GET("{request}")
+    Call<WeatherResponse> getWeather(@Path("request") Request params, @QueryMap Map<String, String> query);
 
-    @GET("/{request}")
-    Observable<WeatherResponse> getWeather(@Path("request") Request params, @QueryMap Map<String,String> query);
+//    @GET("/{request}")
+//    Observable<WeatherResponse> getWeather(@Path("request") Request params, @QueryMap Map<String, String> query);
 
 }
