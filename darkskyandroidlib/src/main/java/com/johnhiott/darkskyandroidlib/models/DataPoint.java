@@ -5,35 +5,35 @@ public class DataPoint {
     private long time;
     private String summary;
     private String icon;
-    private String sunriseTime;
-    private String sunsetTime;
-    private String moonPhase;
-    private String nearestStormDistance;
-    private String nearestStormBearing;
-    private String precipIntensity;
-    private String precipIntensityMax;
-    private String precipIntensityMaxTime;
-    private String precipProbability;
+    private long sunriseTime;
+    private long sunsetTime;
+    private float moonPhase;
+    private int nearestStormDistance;
+    private int nearestStormBearing;
+    private float precipIntensity;
+    private float precipIntensityMax;
+    private long precipIntensityMaxTime;
+    private float precipProbability;
     private String precipType;
-    private String precipAccumulation;
-    private double temperature;
-    private double temperatureMin;
-    private double temperatureMinTime;
-    private double temperatureMax;
-    private double temperatureMaxTime;
-    private double apparentTemperature;
-    private double apparentTemperatureMin;
-    private double apparentTemperatureMinTime;
-    private double apparentTemperatureMax;
-    private double apparentTemperatureMaxTime;
-    private String dewPoint;
-    private String windSpeed;
-    private String windBearing;
-    private String cloudCover;
-    private String humidity;
-    private String pressure;
-    private String visibility;
-    private String ozone;
+    //    private String precipAccumulation;
+    private float temperature;
+    private float temperatureMin;
+    private float temperatureMinTime;
+    private float temperatureMax;
+    private float temperatureMaxTime;
+    private float apparentTemperature;
+    private float apparentTemperatureMin;
+    private float apparentTemperatureMinTime;
+    private float apparentTemperatureMax;
+    private float apparentTemperatureMaxTime;
+    private float dewPoint;
+    private float windSpeed;
+    private float windBearing;
+    private float cloudCover;
+    private float humidity;
+    private float pressure;
+    private float visibility;
+    private float ozone;
 
     public long getTime() {
         return time;
@@ -47,39 +47,39 @@ public class DataPoint {
         return icon;
     }
 
-    public String getSunriseTime() {
+    public long getSunriseTime() {
         return sunriseTime;
     }
 
-    public String getSunsetTime() {
+    public long getSunsetTime() {
         return sunsetTime;
     }
 
-    public String getMoonPhase() {
+    public float getMoonPhase() {
         return moonPhase;
     }
 
-    public String getNearestStormDistance() {
+    public int getNearestStormDistance() {
         return nearestStormDistance;
     }
 
-    public String getNearestStormBearing() {
+    public int getNearestStormBearing() {
         return nearestStormBearing;
     }
 
-    public String getPrecipIntensity() {
+    public float getPrecipIntensity() {
         return precipIntensity;
     }
 
-    public String getPrecipIntensityMax() {
+    public float getPrecipIntensityMax() {
         return precipIntensityMax;
     }
 
-    public String getPrecipIntensityMaxTime() {
+    public long getPrecipIntensityMaxTime() {
         return precipIntensityMaxTime;
     }
 
-    public String getPrecipProbability() {
+    public float getPrecipProbability() {
         return precipProbability;
     }
 
@@ -87,79 +87,79 @@ public class DataPoint {
         return precipType;
     }
 
-    public String getPrecipAccumulation() {
+    /*public String getPrecipAccumulation() {
         return precipAccumulation;
-    }
+    }*/
 
-    public double getTemperature() {
+    public float getTemperature() {
         return temperature;
     }
 
-    public double getTemperatureMin() {
+    public float getTemperatureMin() {
         return temperatureMin;
     }
 
-    public double getTemperatureMinTime() {
+    public float getTemperatureMinTime() {
         return temperatureMinTime;
     }
 
-    public double getTemperatureMax() {
+    public float getTemperatureMax() {
         return temperatureMax;
     }
 
-    public double getTemperatureMaxTime() {
+    public float getTemperatureMaxTime() {
         return temperatureMaxTime;
     }
 
-    public double getApparentTemperature() {
+    public float getApparentTemperature() {
         return apparentTemperature;
     }
 
-    public double getApparentTemperatureMin() {
+    public float getApparentTemperatureMin() {
         return apparentTemperatureMin;
     }
 
-    public double getApparentTemperatureMinTime() {
+    public float getApparentTemperatureMinTime() {
         return apparentTemperatureMinTime;
     }
 
-    public double getApparentTemperatureMax() {
+    public float getApparentTemperatureMax() {
         return apparentTemperatureMax;
     }
 
-    public double getApparentTemperatureMaxTime() {
+    public float getApparentTemperatureMaxTime() {
         return apparentTemperatureMaxTime;
     }
 
-    public String getDewPoint() {
+    public float getDewPoint() {
         return dewPoint;
     }
 
-    public String getWindSpeed() {
+    public float getWindSpeed() {
         return windSpeed;
     }
 
-    public String getWindBearing() {
+    public float getWindBearing() {
         return windBearing;
     }
 
-    public String getCloudClover() {
+    public float getCloudClover() {
         return cloudCover;
     }
 
-    public String getHumidity() {
+    public float getHumidity() {
         return humidity;
     }
 
-    public String getPressure() {
+    public float getPressure() {
         return pressure;
     }
 
-    public String getVisibility() {
+    public float getVisibility() {
         return visibility;
     }
 
-    public String getOzone() {
+    public float getOzone() {
         return ozone;
     }
 }
