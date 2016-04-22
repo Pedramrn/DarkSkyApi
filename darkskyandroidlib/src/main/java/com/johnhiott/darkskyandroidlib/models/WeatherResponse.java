@@ -4,21 +4,21 @@ import java.util.List;
 
 public class WeatherResponse {
 
-    private double latitude;
-    private double longitude;
+    private Double latitude;
+    private Double longitude;
     private String timezone;
-    private String offset;
+    private Float offset;
     private DataPoint currently;
     private DataBlock minutely;
     private DataBlock hourly;
     private DataBlock daily;
     private List<AlertsBlock> alerts;
 
-    public double getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
@@ -26,7 +26,7 @@ public class WeatherResponse {
         return timezone;
     }
 
-    public String getOffset() {
+    public Float getOffset() {
         return offset;
     }
 

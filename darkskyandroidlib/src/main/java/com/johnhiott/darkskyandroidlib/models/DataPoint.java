@@ -2,40 +2,40 @@ package com.johnhiott.darkskyandroidlib.models;
 
 public class DataPoint {
 
-    private long time;
+    private Long time;
     private String summary;
     private String icon;
-    private long sunriseTime;
-    private long sunsetTime;
-    private float moonPhase;
-    private int nearestStormDistance;
-    private int nearestStormBearing;
-    private float precipIntensity;
-    private float precipIntensityMax;
-    private long precipIntensityMaxTime;
-    private float precipProbability;
+    private Long sunriseTime;
+    private Long sunsetTime;
+    private Float moonPhase;
+    private Integer nearestStormDistance;
+    private Integer nearestStormBearing;
+    private Float precipIntensity;
+    private Float precipIntensityMax;
+    private Long precipIntensityMaxTime;
+    private Float precipProbability;
     private String precipType;
     //    private String precipAccumulation;
-    private float temperature;
-    private float temperatureMin;
-    private float temperatureMinTime;
-    private float temperatureMax;
-    private float temperatureMaxTime;
-    private float apparentTemperature;
-    private float apparentTemperatureMin;
-    private float apparentTemperatureMinTime;
-    private float apparentTemperatureMax;
-    private float apparentTemperatureMaxTime;
-    private float dewPoint;
-    private float windSpeed;
-    private float windBearing;
-    private float cloudCover;
-    private float humidity;
-    private float pressure;
-    private float visibility;
-    private float ozone;
+    private Float temperature;
+    private Float temperatureMin;
+    private Float temperatureMinTime;
+    private Float temperatureMax;
+    private Float temperatureMaxTime;
+    private Float apparentTemperature;
+    private Float apparentTemperatureMin;
+    private Float apparentTemperatureMinTime;
+    private Float apparentTemperatureMax;
+    private Float apparentTemperatureMaxTime;
+    private Float dewPoint;
+    private Float windSpeed;
+    private Float windBearing;
+    private Float cloudCover;
+    private Float humidity;
+    private Float pressure;
+    private Float visibility;
+    private Float ozone;
 
-    public long getTime() {
+    public Long getTime() {
         return time;
     }
 
@@ -47,39 +47,39 @@ public class DataPoint {
         return icon;
     }
 
-    public long getSunriseTime() {
+    public Long getSunriseTime() {
         return sunriseTime;
     }
 
-    public long getSunsetTime() {
+    public Long getSunsetTime() {
         return sunsetTime;
     }
 
-    public float getMoonPhase() {
+    public Float getMoonPhase() {
         return moonPhase;
     }
 
-    public int getNearestStormDistance() {
+    public Integer getNearestStormDistance() {
         return nearestStormDistance;
     }
 
-    public int getNearestStormBearing() {
+    public Integer getNearestStormBearing() {
         return nearestStormBearing;
     }
 
-    public float getPrecipIntensity() {
+    public Float getPrecipIntensity() {
         return precipIntensity;
     }
 
-    public float getPrecipIntensityMax() {
+    public Float getPrecipIntensityMax() {
         return precipIntensityMax;
     }
 
-    public long getPrecipIntensityMaxTime() {
+    public Long getPrecipIntensityMaxTime() {
         return precipIntensityMaxTime;
     }
 
-    public float getPrecipProbability() {
+    public Float getPrecipProbability() {
         return precipProbability;
     }
 
@@ -91,75 +91,75 @@ public class DataPoint {
         return precipAccumulation;
     }*/
 
-    public float getTemperature() {
+    public Float getTemperature() {
         return temperature;
     }
 
-    public float getTemperatureMin() {
+    public Float getTemperatureMin() {
         return temperatureMin;
     }
 
-    public float getTemperatureMinTime() {
+    public Float getTemperatureMinTime() {
         return temperatureMinTime;
     }
 
-    public float getTemperatureMax() {
+    public Float getTemperatureMax() {
         return temperatureMax;
     }
 
-    public float getTemperatureMaxTime() {
+    public Float getTemperatureMaxTime() {
         return temperatureMaxTime;
     }
 
-    public float getApparentTemperature() {
+    public Float getApparentTemperature() {
         return apparentTemperature;
     }
 
-    public float getApparentTemperatureMin() {
+    public Float getApparentTemperatureMin() {
         return apparentTemperatureMin;
     }
 
-    public float getApparentTemperatureMinTime() {
+    public Float getApparentTemperatureMinTime() {
         return apparentTemperatureMinTime;
     }
 
-    public float getApparentTemperatureMax() {
+    public Float getApparentTemperatureMax() {
         return apparentTemperatureMax;
     }
 
-    public float getApparentTemperatureMaxTime() {
+    public Float getApparentTemperatureMaxTime() {
         return apparentTemperatureMaxTime;
     }
 
-    public float getDewPoint() {
+    public Float getDewPoint() {
         return dewPoint;
     }
 
-    public float getWindSpeed() {
+    public Float getWindSpeed() {
         return windSpeed;
     }
 
-    public float getWindBearing() {
+    public Float getWindBearing() {
         return windBearing;
     }
 
-    public float getCloudClover() {
+    public Float getCloudClover() {
         return cloudCover;
     }
 
-    public float getHumidity() {
+    public Float getHumidity() {
         return humidity;
     }
 
-    public float getPressure() {
+    public Float getPressure() {
         return pressure;
     }
 
-    public float getVisibility() {
+    public Float getVisibility() {
         return visibility;
     }
 
-    public float getOzone() {
+    public Float getOzone() {
         return ozone;
     }
 }

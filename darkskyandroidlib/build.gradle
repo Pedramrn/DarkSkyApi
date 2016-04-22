@@ -29,7 +29,7 @@ publish {
     uploadName = 'forecastio'
     repoName = 'public-maven'
     artifactId = 'forecastio'
-    publishVersion = '1.0.0-beta2'
+    publishVersion = '1.0.0-beta3'
     desc = 'Forcastio Java Client'
     website = 'https://github.com/Pedramrn/DarkSkyApi'
     repository = 'https://github.com/Pedramrn/DarkSkyApi.git'
